@@ -1,9 +1,32 @@
 {
   "version": 2,
   "builds": [
-    { "src": "config.ru", "use": "@vercel/ruby" }
+    {
+      "src": "config.ru",
+      "use": "@vercel/ruby"
+    }
   ],
+  "buildCommand": "bundle exec rake assets:precompile",
   "routes": [
-    { "src": "/(.*)", "dest": "config.ru" }
+    {
+      "src": "/assets/(.*)",
+      "dest": "/public/assets/$1"
+    },
+    {
+      "src": "/packs/(.*)",
+      "dest": "/public/packs/$1"
+    },
+    {
+      "src": "/favicon.ico",
+      "dest": "/public/favicon.ico"
+    },
+    {
+      "src": "/robots.txt",
+      "dest": "/public/robots.txt"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "config.ru"
+    }
   ]
 }
