@@ -288,7 +288,6 @@ GEM
     parser (3.3.5.0)
       ast (~> 2.4.1)
       racc
-    pg (1.5.8)
     postmark (1.25.1)
       json
     postmark-rails (0.22.1)
@@ -528,7 +527,6 @@ DEPENDENCIES
   letter_opener
   metamagic
   methodz
-  pg
   postmark-rails
   pretender
   puma (= 6.4.2)
